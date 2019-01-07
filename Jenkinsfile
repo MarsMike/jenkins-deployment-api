@@ -21,8 +21,14 @@ podTemplate(label: label, containers: [
           sh '_JAVA_OPTIONS=-Djdk.net.URLClassPath.disableClassPathURLCheck=true mvn clean install'
       }
     }
+    
     stage('deploy to QA') {
-        echo "Done!" > result.txt
+       
+      container('maven') {
+          // Push Build
+          echo "Done!" > result.txt
+      }
+        
     }
   }
 }

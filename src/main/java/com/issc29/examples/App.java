@@ -8,7 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        TextDecorator a = new MyErrorTextDecorator("Hello World from Mike");
+        TextDecorator a = new MyNewErrorTextDecorator("Hello World from Mike");
         System.out.println(a.doubleString());
         System.out.println(a.pipe());
         System.out.println(a.getText());

@@ -20,15 +20,7 @@ podTemplate(label: label, containers: [
           // Run Build
           sh '_JAVA_OPTIONS=-Djdk.net.URLClassPath.disableClassPathURLCheck=true mvn clean install'
       }
-    }
-    
-    stage('build another maven project') {
-      git 'https://github.com/jenkinsci/kubernetes-plugin.git'
-      container('maven') {
-          sh 'mvn -B clean package'
-      }
-    }
-    
+    }  
   }
 }
 

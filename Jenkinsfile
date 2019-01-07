@@ -22,14 +22,13 @@ podTemplate(label: label, containers: [
       }
     }
     
-    stage('deploy to QA') {
-       
+    stage('build another maven project') {
+      git 'https://github.com/jenkinsci/kubernetes-plugin.git'
       container('maven') {
-          // Push Build
-          echo "Done!" > result.txt
+          sh 'mvn -B clean package'
       }
-        
     }
+    
   }
 }
 

@@ -25,7 +25,7 @@ public class TextDecorator {
 
     public String pipe(){
         String[] parts = text.split("");
-        text.replace("","|");
+        text.replace("NIX","|");
 
         return text.replace("","|");
     }

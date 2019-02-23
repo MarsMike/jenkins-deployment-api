@@ -20,7 +20,14 @@ podTemplate(cloud: 'playground', label: label, containers: [
           // Run Build
           sh '_JAVA_OPTIONS=-Djdk.net.URLClassPath.disableClassPathURLCheck=true mvn clean install'
       }
-    }  
+    }
+    
+    stage('build info') {
+        
+        rtPublishBuildInfo (
+            serverId: "Artifactory"
+        )
+    }
   }
 }
 
